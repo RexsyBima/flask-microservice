@@ -1,17 +1,10 @@
 import requests
-from dataclasses import dataclass
 
-
-@dataclass
-class FearAndGreed:
-    value: int
-    classification: str
-
-
-url = "https://api.alternative.me/fng/"
-resp = requests.get(url).json()
-fng = FearAndGreed(
-    value=resp["data"][0]["value"],
-    classification=resp["data"][0]["value_classification"],
-)
-print(fng)
+url = "https://api.coingecko.com/api/v3/simple/price"
+API_KEY = "CG-TPkwDzVrwXMqpihXELDY9y23"
+headers = {
+    "accept": "application/json",
+    "x-cg-demo-api-key": API_KEY,
+}
+resp = requests.get(url, headers=headers)
+print(resp.text)
