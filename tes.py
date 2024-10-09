@@ -1,10 +1,6 @@
-import requests
+news = ["news1", "news2", "news3"]
+berita = ""
+for n in news:
+    berita = berita + n
 
-url = "https://api.coingecko.com/api/v3/simple/price"
-API_KEY = "CG-TPkwDzVrwXMqpihXELDY9y23"
-headers = {
-    "accept": "application/json",
-    "x-cg-demo-api-key": API_KEY,
-}
-resp = requests.get(url, headers=headers)
-print(resp.text)
+print(berita)
