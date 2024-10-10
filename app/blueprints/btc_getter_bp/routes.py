@@ -3,16 +3,16 @@ from app import mail
 from flask_mail import Message
 import requests
 from flask import request
-from .bp import btc_getter
+from .bp import btc_getter_bp
 import os
 
 
-@btc_getter.route("/")
+@btc_getter_bp.route("/")
 def index():
-    return "Hello world from btc_getter"
+    return "Hello world from btc_getter_bp"
 
 
-@btc_getter.route("/get_btc", methods=["POST"])
+@btc_getter_bp.route("/get_btc", methods=["POST"])
 def get_btc():
     email = request.form.get("EMAIL")
     url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_last_updated_at=true"

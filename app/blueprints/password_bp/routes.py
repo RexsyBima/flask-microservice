@@ -1,13 +1,14 @@
 from .bp import password_bp
 from . import password_list, lowercase, uppercase
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from app.utils import (
     has_digit,
     has_punctuation,
     password_has_uppercase_or_lowercase,
 )
-import random, string, re
-from flask import request, jsonify
+import random
+import string
+import re
 
 
 @password_bp.route("/")
